@@ -1,0 +1,87 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "leila1-login-test;successful-login",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Successful login",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I navigate to Leila1 login page",
+            "match": {
+              "location": "src/test/features/MG1/_steps/login.steps.ts:6"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 3520957,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'goto')\n    at World.<anonymous> (/Users/yuliiaromanko/projects/leila1/src/test/features/MG1/_steps/login.steps.ts:9:28)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I fill in the login form with valid credentials",
+            "match": {
+              "location": "src/test/features/MG1/_steps/login.steps.ts:12"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I submit the login form",
+            "match": {
+              "location": "src/test/features/MG1/_steps/login.steps.ts:18"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should see the Leila1 menu",
+            "match": {
+              "location": "src/test/features/MG1/_steps/login.steps.ts:25"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@runThis",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "leila1-login-test",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Leila1 Login Test",
+    "tags": [
+      {
+        "name": "@runThis",
+        "line": 1
+      }
+    ],
+    "uri": "src/test/features/MG1/login.feature"
+  }
+]
