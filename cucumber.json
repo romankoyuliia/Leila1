@@ -1,14 +1,17 @@
 {
-    "default": {
+  "default": {
     "format": ["json:report/cucumber-report.json", "html:report/cucumber-report.html"],
     "formatOptions": {
-    "snippetInterface": "async-await"
+      "snippetInterface": "async-await"
     },
     "dryRun": false,
-    "require": ["src/test/utils/*.ts"],
+    "require": [
+      "src/utils/hooks.ts",
+      "src/utils/*.ts",
+      "src/test/features/**/*.ts"
+    ],
     "requireModule": ["ts-node/register"],
-    "timeout": 17000,
+    "timeout": 60000,
     "parallel": 1
-    }
+  }
 }
-     

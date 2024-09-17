@@ -1,34 +1,33 @@
 import { Before, After, BeforeAll, AfterAll } from "@cucumber/cucumber";
-import { 
-    type Browser,
-    type BrowserContext,
-    type Page,
-    chromium,
-} from "playwright";
-import { initializePageFixture, pageFixture } from "./pageFixture";
+import { chromium, Browser, BrowserContext } from "@playwright/test";
+import { pageFixture, initializePageFixture } from "./pageFixture";
 
 let browser: Browser;
 let context: BrowserContext;
-let page: Page;
+
+console.log("hooks.ts is being loaded");
 
 BeforeAll(async () => {
-browser = await chromium.launch({headless: false});
+  console.log("BeforeAll: Launching browser");
+  browser = await chromium.launch({ headless: false });
+  console.log("BeforeAll: Browser launched");
 });
 
-Before(async () => {
-context = await browser.newContext({ viewport: { width: 1200, height: 1080 } });
-pageFixture.page = await context.newPage();
-await initializePageFixture()
+Before(async function() {
+  context = await browser.newContext({ viewport: { width: 1200, height: 1080 } });
+  const page = await context.newPage();
+  initializePageFixture(page);
+  
+  this.pageFixture = pageFixture;
 });
 
 After(async () => {
-await pageFixture.page.close()
-await context.close();
+  if (pageFixture.page) {
+    await pageFixture.page.close();
+  }
+  await context.close();
 });
 
 AfterAll(async () => {
-await browser.close();
+  await browser.close();
 });
-
-
-

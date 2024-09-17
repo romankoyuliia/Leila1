@@ -2,28 +2,28 @@ import type { Page } from "@playwright/test";
 import { LoginPage } from "../test/features/MG1/_pages/LoginPage";
 
 interface PageFixture {
-    page: Page;
+    page: Page | null;
     data: Record<string, string | null>;
     _leadID: string | null;
     _serviceProducts: string[] | null;
     _accessories: string[] | null;
-    loginPage: LoginPage;
+    loginPage: LoginPage | null;
     dealerPortalBaseUrl: string | null;
     backOfficeBaseUrl: string | null;
 }
 
 export const pageFixture: PageFixture = {
-    page: undefined as unknown as Page,
+    page: null,
     data: {},
     _leadID: null,
     _serviceProducts: null,
     _accessories: null,
-    loginPage: undefined as unknown as LoginPage,
+    loginPage: null,
     dealerPortalBaseUrl: null,
     backOfficeBaseUrl: null,
 };
 
-export const initializePageFixture = (): void => {
-    pageFixture.loginPage = new LoginPage();
-   
+export const initializePageFixture = (page: Page): void => {
+  pageFixture.page = page;
+  pageFixture.loginPage = new LoginPage();
 };
