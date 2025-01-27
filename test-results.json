@@ -10,9 +10,7 @@
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
-    "metadata": {
-      "actualWorkers": 1
-    },
+    "metadata": {},
     "preserveOutput": "always",
     "reporter": [
       [
@@ -49,66 +47,21 @@
     ],
     "shard": null,
     "updateSnapshots": "missing",
-    "version": "1.44.0",
-    "workers": 1,
+    "version": "1.45.1",
+    "workers": 4,
     "webServer": null
   },
-  "suites": [
+  "suites": [],
+  "errors": [
     {
-      "title": "Login.spec.ts",
-      "file": "Login.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Example tests",
-          "file": "Login.spec.ts",
-          "line": 3,
-          "column": 6,
-          "specs": [
-            {
-              "title": "login unsuccessful",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "",
-                  "projectName": "",
-                  "results": [
-                    {
-                      "workerIndex": 24,
-                      "status": "passed",
-                      "duration": 1289,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-05-21T12:59:54.146Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "42af536f2c838a173cb6-fdc026b57f881645a4ee",
-              "file": "Login.spec.ts",
-              "line": 16,
-              "column": 7
-            }
-          ]
-        }
-      ]
+      "message": "Error: No tests found.\nMake sure that arguments are regular expressions matching test files.\nYou may need to escape symbols like \"$\" or \"*\" and quote the arguments.",
+      "stack": "Error: No tests found.\nMake sure that arguments are regular expressions matching test files.\nYou may need to escape symbols like \"$\" or \"*\" and quote the arguments."
     }
   ],
-  "errors": [],
   "stats": {
-    "startTime": "2024-05-21T12:59:53.531Z",
-    "duration": 2309.4319999814034,
-    "expected": 1,
+    "startTime": "2024-09-17T13:13:40.432Z",
+    "duration": 3.973000000000013,
+    "expected": 0,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

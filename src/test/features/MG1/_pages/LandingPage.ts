@@ -20,7 +20,7 @@ private getPage(): Page {
  }
 
  get navigationMenu(): Locator {
-    return this.getPage().frameLocator('[name="3000021730119345322"]').locator(".nav-main");
+    return this.getPage().locator(".nav-main");
 }
 
 get searchMenu(): Locator {

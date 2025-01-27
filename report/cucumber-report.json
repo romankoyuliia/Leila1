@@ -4,23 +4,30 @@
     "elements": [
       {
         "description": "",
-        "id": "leila1-login-test;successful-login",
+        "id": "leila1-landing-page;opening-menu",
         "keyword": "Scenario",
         "line": 4,
-        "name": "Successful login",
+        "name": "Opening menu",
         "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 601889082
+            }
+          },
           {
             "arguments": [],
             "keyword": "Given ",
             "line": 5,
             "name": "I navigate to Leila1 login page",
             "match": {
-              "location": "src/test/features/MG1/_steps/login.steps.ts:6"
+              "location": "src/test/features/MG1/_steps/login.steps.ts:5"
             },
             "result": {
-              "status": "failed",
-              "duration": 3520957,
-              "error_message": "TypeError: Cannot read properties of undefined (reading 'goto')\n    at World.<anonymous> (/Users/yuliiaromanko/projects/leila1/src/test/features/MG1/_steps/login.steps.ts:9:28)"
+              "status": "passed",
+              "duration": 1459583875
             }
           },
           {
@@ -32,8 +39,8 @@
               "location": "src/test/features/MG1/_steps/login.steps.ts:12"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 1343326250
             }
           },
           {
@@ -42,7 +49,47 @@
             "line": 7,
             "name": "I submit the login form",
             "match": {
-              "location": "src/test/features/MG1/_steps/login.steps.ts:18"
+              "location": "src/test/features/MG1/_steps/login.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 54093374
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should see the Leila1 menu",
+            "match": {
+              "location": "src/test/features/MG1/_steps/login.steps.ts:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1330166
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 9,
+            "name": "I click on the Autohaus Management folder",
+            "match": {
+              "location": "src/test/features/MG1/_steps/landing.steps.ts:5"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 30004786499,
+              "error_message": "locator.click: Timeout 30000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('.x-tree-elbow-end-plus')\u001b[22m\n\n    at World.<anonymous> (/Users/yuliiaromanko/projects/leila1/src/test/features/MG1/_steps/landing.steps.ts:8:55)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I click on Helferli file",
+            "match": {
+              "location": "src/test/features/MG1/_steps/landing.steps.ts:13"
             },
             "result": {
               "status": "skipped",
@@ -52,14 +99,145 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 8,
-            "name": "I should see the Leila1 menu",
+            "line": 11,
+            "name": "I should see Navigation menu",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "I click on Navigation menu",
             "match": {
-              "location": "src/test/features/MG1/_steps/login.steps.ts:25"
+              "location": "src/test/features/MG1/_steps/landing.steps.ts:28"
             },
             "result": {
               "status": "skipped",
               "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "I should be trasferred to Search Menu",
+            "match": {
+              "location": "src/test/features/MG1/_steps/landing.steps.ts:38"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 33894249
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@runThis",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "leila1-landing-page",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Leila1 Landing page",
+    "tags": [
+      {
+        "name": "@runThis",
+        "line": 1
+      }
+    ],
+    "uri": "src/test/features/MG1/landing.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "leila1-login-test;successful-login",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Successful login",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 225613708
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I navigate to Leila1 login page",
+            "match": {
+              "location": "src/test/features/MG1/_steps/login.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 865358958
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I fill in the login form with valid credentials",
+            "match": {
+              "location": "src/test/features/MG1/_steps/login.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2862228999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I submit the login form",
+            "match": {
+              "location": "src/test/features/MG1/_steps/login.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 49826624
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should see the Leila1 menu",
+            "match": {
+              "location": "src/test/features/MG1/_steps/login.steps.ts:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 764249
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 11739292
             }
           }
         ],

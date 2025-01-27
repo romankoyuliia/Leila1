@@ -8,5 +8,6 @@ Scenario: Opening menu
   Then I should see the Leila1 menu
   Given I click on the Autohaus Management folder
   When I click on Helferli file
+  Then I should see Navigation menu
   When I click on Navigation menu
   Then I should be trasferred to Search Menu

@@ -4,9 +4,7 @@ import { pageFixture, initializePageFixture } from "./pageFixture";
 
 let browser: Browser;
 let context: BrowserContext;
-
-console.log("hooks.ts is being loaded");
-
+    
 BeforeAll(async () => {
   console.log("BeforeAll: Launching browser");
   browser = await chromium.launch({ headless: false });

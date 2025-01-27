@@ -1,5 +1,5 @@
 import { Given, Then, When } from "@cucumber/cucumber";
-import { expect } from "@playwright/test";
+import { expect, Frame } from "@playwright/test";
 import { pageFixture } from "../../../../utils/pageFixture";
 
 Given("I click on the Autohaus Management folder",
@@ -18,18 +18,27 @@ When("I click on Helferli file",
   }
 );
 
-When("I click on Navigation menu", 
+Then("When I should see Navigation menu", 
   { timeout: 50000 },
   async () => {
-    await pageFixture.page?.waitForTimeout(5000)
-    await pageFixture.landingPage?.navigationMenu.click({force: true});
-    await pageFixture.page?.waitForTimeout(5000)
+    expect(pageFixture.page?.url()).toBe("http://lac-phpapp-s01.dc.lac.internal/php/leaseb2c/leila#consultant/todo");
   }
 );
 
+When("I click on Navigation menu",
+  { timeout: 50000 },
+  async () => {
+   const frames = await pageFixture.page?.frames();
+   console.log(frames)
+   const frame = pageFixture.page?.frameLocator("//iframe[contains(@src, '/php/autohausoffice')]").nth(1)
+    await frame?.locator("(//nav[@class='nav-main'])[1]").click();
+ }
+);
+ 
 Then("I should be trasferred to Search Menu", 
   { timeout: 50000 },
   async function(this: any): Promise<void>  {
     await  this.pageFixture.landingPage.searchMenu.toBeVisible();
   }
 );
+
