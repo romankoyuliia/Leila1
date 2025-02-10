@@ -12,7 +12,7 @@ Given("I navigate to Leila1 login page",
 When("I fill in the login form with valid credentials",
   { timeout: 50000 },
   async () => {
-    await pageFixture.loginPage?.login("y06437", "Trubadurmiykit_2306");
+    await pageFixture.loginPage?.login("y06437", "Deutsch_2505");
   }
 );
 

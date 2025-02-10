@@ -18,27 +18,26 @@ When("I click on Helferli file",
   }
 );
 
-Then("When I should see Navigation menu", 
-  { timeout: 50000 },
-  async () => {
-    expect(pageFixture.page?.url()).toBe("http://lac-phpapp-s01.dc.lac.internal/php/leaseb2c/leila#consultant/todo");
-  }
-);
-
 When("I click on Navigation menu",
   { timeout: 50000 },
   async () => {
    const frames = await pageFixture.page?.frames();
    console.log(frames)
-   const frame = pageFixture.page?.frameLocator("//iframe[contains(@src, '/php/autohausoffice')]").nth(1)
-    await frame?.locator("(//nav[@class='nav-main'])[1]").click();
- }
+   const iframe=pageFixture.page?.frameLocator('iframe[src*="/php/autohausoffice/ah14"]')
+   const navmanu = iframe?.locator('.nav-main')
+   return await navmanu?.click()
+   }
 );
  
 Then("I should be trasferred to Search Menu", 
   { timeout: 50000 },
-  async function(this: any): Promise<void>  {
+  async function(this: any): Promise<void> { 
     await  this.pageFixture.landingPage.searchMenu.toBeVisible();
   }
 );
-
+Then ("I should wait",
+  { timeout: 50000 },
+  async function(this: any): Promise<void> { 
+    await this.pageFixture.page.waitForTimeout(5000)
+  } 
+)
