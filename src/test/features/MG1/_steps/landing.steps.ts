@@ -29,12 +29,6 @@ When("I click on Navigation menu",
    }
 );
  
-Then("I should be trasferred to Search Menu", 
-  { timeout: 50000 },
-  async function(this: any): Promise<void> { 
-    await  this.pageFixture.landingPage.searchMenu.toBeVisible();
-  }
-);
 Then ("I should wait",
   { timeout: 50000 },
   async function(this: any): Promise<void> { 

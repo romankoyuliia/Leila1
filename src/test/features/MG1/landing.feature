@@ -10,3 +10,4 @@ Scenario: Opening menu
   When I click on Helferli file
   When I click on Navigation menu
   Then I should wait
+ 
