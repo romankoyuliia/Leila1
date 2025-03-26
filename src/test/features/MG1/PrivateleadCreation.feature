@@ -1,6 +1,7 @@
+ @runThis
+Feature: The creation of the new lead
 
-Feature: Leila1 Landing page
-
+Scenario: Lead creation_private,vario
   Given I navigate to Leila1 login page
   When I fill in the login form with valid credentials
   When I submit the login form
@@ -10,3 +11,7 @@ Feature: Leila1 Landing page
   When I click on Navigation menu
   Then I should be transferred to Search Menu
   Then I should wait
+  Given I click on the Process and insert ID
+  When I choose from the dropdown lists the producer, car model, fuel type, transmission
+  When I proceed with color selecting 
+  When I click at logistics tab

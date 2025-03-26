@@ -1,6 +1,9 @@
 import type { Page } from "@playwright/test";
 import { LoginPage } from "../test/features/MG1/_pages/LoginPage";
 import { LandingPage } from "../test/features/MG1/_pages/LandingPage";
+import { PrivateCustomerPage } from "../test/features/MG1/_pages/PrivateCustomerPage";
+import { PrivateleadCreationPage } from "../test/features/MG1/_pages/PrivateleadCreationPage";
+
 
 interface PageFixture {
     page: Page | null;
@@ -10,6 +13,9 @@ interface PageFixture {
     _accessories: string[] | null;
     loginPage: LoginPage | null;
     landingPage: LandingPage | null;
+    customerPage: PrivateCustomerPage | null;
+    privateleadcreationPage: PrivateleadCreationPage | null;
+   
 }
 
 export const pageFixture: PageFixture = {
@@ -19,11 +25,16 @@ export const pageFixture: PageFixture = {
     _serviceProducts: null,
     _accessories: null,
     loginPage: null,
-    landingPage: null
+    landingPage: null,
+    customerPage: null,
+    privateleadcreationPage: null,
+  
 };
 
 export const initializePageFixture = (page: Page): void => {
   pageFixture.page = page;
   pageFixture.loginPage = new LoginPage();
   pageFixture.landingPage = new LandingPage();
+  pageFixture.customerPage = new PrivateCustomerPage();
+  pageFixture.privateleadcreationPage = new PrivateleadCreationPage();
 };
