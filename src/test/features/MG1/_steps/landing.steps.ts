@@ -13,7 +13,7 @@ Given("I click on the Autohaus Management folder",
  await expect(landingPage!.helferliFile).toBeVisible({
  timeout: RESPONSE_TIMEOUT,
  });
- },
+}
 );
 
 When("I click on Helferli file",  

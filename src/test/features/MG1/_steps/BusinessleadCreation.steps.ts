@@ -5,20 +5,21 @@ import { pageFixture } from "../../../../utils/pageFixture";
 const STEP_TIMEOUT = 100000;
 const RESPONSE_TIMEOUT = 6000;
 
-Given("I click on the Process and insert ID",
- { timeout: STEP_TIMEOUT },
+Given("I click on the Vorgang and insert ID",
+    { timeout: STEP_TIMEOUT },
 async () => {
 const { page } = pageFixture;
 const iframe = page!.frameLocator('iframe[src*="/php/autohausoffice"]');
 const newProcess = iframe.getByRole('link', { name: 'Vorgang' }).click();
-await iframe.getByPlaceholder('Kunden-Nr / -Email / -Name').fill('1487256');
+await iframe.getByPlaceholder('Kunden-Nr / -Email / -Name').fill('1487385');
 await iframe.getByRole('button', { name: 'Los' }).click();
+await iframe.locator('select[name="user"]').selectOption('0');
 await page!.waitForTimeout(RESPONSE_TIMEOUT);
 });
 
-When("I choose from the dropdown lists the producer, car model, fuel type, transmission",
- { timeout: STEP_TIMEOUT },
-async () => {
+When("I proceed with producer, car model, fuel type, transmission selection", 
+    { timeout: STEP_TIMEOUT },
+    async () => {
 const { page } = pageFixture;
 const iframe = page!.frameLocator('iframe[src*="/php/autohausoffice"]');
 await iframe.getByLabel('Hersteller AbarthAlfa').selectOption('13');
@@ -30,9 +31,9 @@ await iframe.getByLabel('Leistung 306 PS / 225 KW').selectOption('306');
 await iframe.getByLabel('Modell M135i xDrive A, 5 Türen').first().selectOption('876684');
 });
 
-When("I proceed with color selecting",
+When("I choose color",
     { timeout: STEP_TIMEOUT },
-async () => {
+    async () => {
 const { page } = pageFixture;
 const iframe = page!.frameLocator('iframe[src*="/php/autohausoffice"]');
 await page!.waitForTimeout(RESPONSE_TIMEOUT);
@@ -50,9 +51,9 @@ await iframe.locator('a.button.mll').scrollIntoViewIfNeeded({ timeout: 60000 });
 await iframe.locator('a.button.mll').click({ timeout: 60000 });
 });
 
-Then("I click at logistics tab and proceed with lead processing",
+Then("I continue with lead processing as soon as it is created",
     { timeout: STEP_TIMEOUT },
-async () => {
+    async () => {
 const { page } = pageFixture;
 const iframe = page!.frameLocator('iframe[src*="/php/autohausoffice"]');
 await page!.waitForTimeout(RESPONSE_TIMEOUT);
@@ -63,7 +64,7 @@ await iframe.locator('select[name="registration_through_type"]').selectOption('1
 await iframe.locator('select[name="registration_for_type"]').selectOption('1');
 await iframe.locator('select[name="registration_partner"]').selectOption('1');
 await iframe.getByRole('link', { name: 'Kalkulation' }).click();
-await iframe.getByLabel('Vario-Leasing').check();
+await iframe.getByLabel('Leasing', { exact: true }).check();
 await iframe.getByRole('link', { name: 'Kalkulation' }).click();
 await iframe.getByRole('button', { name: 'Prozess Aktionen' }).click();
 await iframe.getByText('Speichern', { exact: true }).click();
@@ -82,10 +83,3 @@ await iframe.getByPlaceholder('Kunde: Nr. / Email / Nachname').fill('1487256');
 await iframe.locator('form[name="customer"]').getByRole('button', { name: '>>' }).click();
 await iframe.locator('div:nth-child(2) > .ui-tabPanel-body > div > .ui-grid-cont > .ui-grid > tbody > tr > td:nth-child(19)').first().click();
 });
-
-
-  
-    
-        
-
-        

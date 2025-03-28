@@ -3,6 +3,7 @@ import { LoginPage } from "../test/features/MG1/_pages/LoginPage";
 import { LandingPage } from "../test/features/MG1/_pages/LandingPage";
 import { PrivateCustomerPage } from "../test/features/MG1/_pages/PrivateCustomerPage";
 import { PrivateleadCreationPage } from "../test/features/MG1/_pages/PrivateleadCreationPage";
+import { BusinessleadCreationPage } from "../test/features/MG1/_pages/BusinessleadCreationPage";
 
 
 interface PageFixture {
@@ -15,6 +16,7 @@ interface PageFixture {
     landingPage: LandingPage | null;
     customerPage: PrivateCustomerPage | null;
     privateleadcreationPage: PrivateleadCreationPage | null;
+    businessleadcreationPage: BusinessleadCreationPage | null;
    
 }
 
@@ -28,7 +30,7 @@ export const pageFixture: PageFixture = {
     landingPage: null,
     customerPage: null,
     privateleadcreationPage: null,
-  
+    businessleadcreationPage: null,
 };
 
 export const initializePageFixture = (page: Page): void => {
@@ -37,4 +39,5 @@ export const initializePageFixture = (page: Page): void => {
   pageFixture.landingPage = new LandingPage();
   pageFixture.customerPage = new PrivateCustomerPage();
   pageFixture.privateleadcreationPage = new PrivateleadCreationPage();
+  pageFixture.businessleadcreationPage = new BusinessleadCreationPage();
 };
